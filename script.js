@@ -45,3 +45,8 @@ function task11 () {
 function task22 () {
     return new Promise (resolve => setTimeout(() => resolve("this task22 is already here"), 3000));
 }
+
+
+Promise.race([task11(), task22()])
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
